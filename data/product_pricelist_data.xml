@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="vip_discount"
+        model="product.pricelist">
+        <field name="name">VIP</field>
+        <field name="item_ids"
+            eval="[(0, 0, {'product_id': False, 'base': 'list_price', 'compute_price': 'percentage', 'percent_price': 40.0})]" />
+    </record>
+
+</odoo>
