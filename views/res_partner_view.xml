@@ -10,7 +10,10 @@
             type="xml">
             <xpath expr="//field[@name='team_id']"
                 position="after">
-                <field name="vip" />
+                <field name="warn_vip"
+                    invisible="1" />
+                <field name="vip"
+                    attrs="{'invisible': [('warn_vip', '=', False)]}" />
             </xpath>
         </field>
     </record>

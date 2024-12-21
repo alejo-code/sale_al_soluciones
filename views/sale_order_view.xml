@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <record id="view_sales_order_filter"
+        model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="inherit_id"
+            ref="sale.view_sales_order_filter" />
+        <field name="arch"
+            type="xml">
+            <xpath expr="//filter[@name='my_sale_orders_filter']"
+                position="after">
+                <filter string="Clientes VIP"
+                    name="filter_vip"
+                    domain="[('vip', '=', True)]" />
+
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_sales_reports"
+        name="Informes"
+        parent="sale.sale_menu_root" />
+
+    <menuitem id="menu_sales_wizard"
+        name="Ventas por Vendedor"
+        parent="sale_al_soluciones.menu_sales_reports"
+        action="action_sale_order_wizard"
+        sequence="10" />
+
+    <record id="action_sale_order_wizard"
+        model="ir.actions.act_window">
+        <field name="name">Ventas por Vendedor</field>
+        <field name="res_model">sale.order.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+</odoo>
