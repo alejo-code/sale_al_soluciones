@@ -7,15 +7,15 @@ from datetime import datetime
 
 class SaleOrderWizard(models.TransientModel):
     _name = "sale.order.wizard"
-    _description = "Wizard para filtrar pedidos de ventas por vendedor y fecha"
+    _description = "Wizard to filter sales orders by salesperson and date"
 
     user_ids = fields.Many2many(
         comodel_name="res.users",
-        string="Vendedores",
-        help="Selecciona uno o más vendedores para filtrar los pedidos.",
+        string="Salespersons",
+        help="Select one or more salespersons to filter the orders.",
     )
-    date_from = fields.Date(string="Desde")
-    date_to = fields.Date(string="Hasta")
+    date_from = fields.Date(string="From")
+    date_to = fields.Date(string="To")
 
     @api.model
     def _get_domain(self):

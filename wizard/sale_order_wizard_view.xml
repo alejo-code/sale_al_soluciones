@@ -6,7 +6,7 @@
         <field name="model">sale.order.wizard</field>
         <field name="arch"
             type="xml">
-            <form string="Ventas por Vendedor">
+            <form string="Sales by Salesperson">
                 <group>
                     <field name="user_ids"
                         widget="many2many_tags"
@@ -17,7 +17,7 @@
                     <field name="date_to" />
                 </group>
                 <footer>
-                    <button string="Filtrar Ventas"
+                    <button string="Filter Sales"
                         type="object"
                         name="action_filter_sales"
                         class="btn-primary" />

@@ -9,6 +9,7 @@
     "depends": ["sale", "sales_team"],
     "data": [
         "data/product_pricelist_data.xml",
+        "security/ir.model.access.csv",
         "views/res_partner_view.xml",
         "views/sale_order_view.xml",
         "wizard/sale_order_wizard_view.xml",
