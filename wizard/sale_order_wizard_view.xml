@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sale_order_wizard_form"
+        model="ir.ui.view">
+        <field name="model">sale.order.wizard</field>
+        <field name="arch"
+            type="xml">
+            <form string="Sales by Salesperson">
+                <group>
+                    <field name="user_ids"
+                        widget="many2many_tags"
+                        options="{'no_create': True}" />
+                </group>
+                <group>
+                    <field name="date_from" />
+                    <field name="date_to" />
+                </group>
+                <footer>
+                    <button string="Filter Sales"
+                        type="object"
+                        name="action_filter_sales"
+                        class="btn-primary" />
+                    <button string="Cancelar"
+                        class="btn-secondary"
+                        special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
